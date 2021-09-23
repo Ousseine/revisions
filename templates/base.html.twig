@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <title>{% block title %}Blog{% endblock %}</title>
+
+        {% block css %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block js %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <div id="{% block body_id "interface" %}">
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>

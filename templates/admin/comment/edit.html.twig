@@ -1,0 +1,7 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block admin_class %}{{ parent() }} edit{% endblock %}
+
+{% block admin %}
+    {{ include('admin/comment/_form.html.twig') }}
+{% endblock %}

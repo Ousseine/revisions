@@ -1,0 +1,17 @@
+<h4>Tag</h4>
+<ul>
+    {% for tag in tags %}
+        <li>
+            <a href="{{ path('blog_tag', {name: tag.name}) }}">{{ tag.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<h4 class="mt-4">Categories</h4>
+<ul>
+    {% for category in categories %}
+        <li>
+            <a href="{{ path('blog_category', {name: category.name}) }}">{{ category.name }}</a>
+        </li>
+    {% endfor %}
+</ul>

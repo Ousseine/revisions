@@ -1,0 +1,7 @@
+{% if not post.categories.empty %}
+    {% for tag in post.categories %}
+        <ul class="tags">
+            <li><a href="{{ path('blog_tag_filter', {name: tag.name}) }}">{{ tag.name }}</a></li>
+        </ul>
+    {% endfor %}
+{% endif %}

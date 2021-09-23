@@ -1,0 +1,36 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block admin_class %}{{ parent() }} show{% endblock %}
+
+{% block admin %}
+    <h1>Comment</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Content</th>
+                <td>{{ comment.content }}</td>
+            </tr>
+            <tr>
+                <th>Published_at</th>
+                <td>{{ comment.publishedAt ? comment.publishedAt|date('d/ m/ Y à H:i') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated_at</th>
+                <td>{{ comment.updatedAt ? comment.updatedAt|date('d/ m/ Y à H:i') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Is_valid</th>
+                <td>{{ comment.isValid ? 'OUI' : 'NON' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_comment_index') }}">back to list</a>
+
+    {% if not comment.isValid %}
+        <a href="{{ path('admin_comment_edit', {'id': comment.id}) }}">valider</a>
+    {% endif %}
+
+    {{ include('admin/comment/_delete_form.html.twig') }}
+{% endblock %}

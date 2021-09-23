@@ -1,0 +1,17 @@
+{% extends 'page/page.html.twig' %}
+
+{% block body_id %}{{ parent() }} blog{% endblock %}
+
+{% block main_class %}{{ parent() }} blog_post{% endblock %}
+
+{% block main %}
+    <h1 class="mb-4">{{ post.title }}</h1>
+    <img src="{{ post.imageName }}" alt="{{ post.title }}">
+    <div class="mt-2 mb-4">
+        <em><i class="far fa-calendar-alt"></i> {{ post.publishedAt|date('d/m/Y') }}</em>
+        <em><i class="fas fa-user"></i> {{ post.author }}</em>
+    </div>
+    <article>
+        {{ post.content }}
+    </article>
+{% endblock %}

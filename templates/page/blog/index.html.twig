@@ -1,0 +1,24 @@
+{% extends 'page/page.html.twig' %}
+
+{% block body_id %}{{ parent() }} blog{% endblock %}
+
+{% block main_class %}{{ parent() }} blog-index{% endblock %}
+
+{% block main %}
+<h1>List des posts</h1>
+
+<div class="row">
+    <div class="col-md-9 grid">
+        {% for post in posts %}
+            {% include 'page/blog/fragment/_card.html.twig' with {post: post} only %}
+        {% endfor %}
+    </div>
+    <div class="col-md-3 filter">
+        {{ filter() }}
+    </div>
+</div>
+
+<div class="pagination">
+    {{ knp_pagination_render(posts) }}
+</div>
+{% endblock %}

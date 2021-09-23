@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title "Blog" %}
+
+{% block body_id %}main{% endblock %}
+
+{% block body %}
+{% include "include/navbar.html.twig" %}
+
+<div class="{% block main_class "contain" %}">
+    {% block main %}{% endblock %}
+</div>
+{% endblock body %}

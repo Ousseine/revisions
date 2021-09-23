@@ -1,0 +1,35 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block admin_class %}{{ parent() }} index{% endblock %}
+
+{% block admin %}
+    <h1>Comment index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Content</th>
+                <th>Published</th>
+                <th>Is_valid</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comment in comments %}
+            <tr>
+                <td>{{ comment.content }}</td>
+                <td>{{ comment.publishedAt ? comment.publishedAt|date('d/ m/ Y à H:i') : '' }}</td>
+                <td>{{ comment.isValid ? 'OUI' : 'NON' }}
+                </td>
+                <td>
+                    <a href="{{ path('admin_comment_show', {'id': comment.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

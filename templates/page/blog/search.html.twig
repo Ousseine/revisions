@@ -1,0 +1,26 @@
+{% extends 'page/page.html.twig' %}
+
+{% block body_id %}{{ parent() }} blog{% endblock %}
+
+{% block main_class %}{{ parent() }} blog-search{% endblock %}
+
+{% block title %}Blog : {{ data.q }}{% endblock %}
+
+{% block main %}
+<h1>Resultat de la recherche</h1>
+
+<em>Il y a {{ posts|length }} posts trouvé pour la recherche "<strong>{{ data.q }}</strong>"</em>
+
+<div class="row my-4">
+    <div class="col-md-9 grid">
+        {% for post in posts %}
+            {% include 'page/blog/fragment/_card.html.twig' %}
+        {% else %}
+            <p>Aucun post trouvé</p>
+        {% endfor %}
+    </div>
+    <div class="col-md-3">
+        {{ filter() }}
+    </div>
+</div>
+{% endblock %}

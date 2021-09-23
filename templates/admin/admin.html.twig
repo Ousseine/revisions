@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title "Admin - Blog" %}
+
+{% block body_id %}admin{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('admin')}}
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('admin')}}
+{% endblock %}
+
+
+{% block body %}
+{% include "include/sidebar.html.twig" %}
+
+<div class="{% block admin_class "admin" %}">
+    <h1 class="mb-3">Interface Administration</h1>
+    {% block admin %}{% endblock %}
+</div>
+{% endblock body %}

@@ -1,0 +1,48 @@
+.main {
+    width: 60%;
+    margin: auto;
+}
+
+.navbar .container-fluid {
+    width: 60%;
+}
+
+.contain {
+    width: 80%;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+
+.filter {
+    display: block;
+    position: sticky;
+    top: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+form .search_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+form .btn {
+    background-color: #5eb5e0;
+    color: #FFFFFF;
+    margin-left: 5px;
+}
+
+form .btn:hover {
+    color: #FFFFFF;
+}

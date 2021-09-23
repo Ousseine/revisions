@@ -1,0 +1,13 @@
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+# admin
+admin:
+    path: /admin
+    controller: App\Controller\Admin\DefaultController::index
+
+# register
+app_register:
+    path: /register
+    controller: App\Controller\RegistrationController::register    
